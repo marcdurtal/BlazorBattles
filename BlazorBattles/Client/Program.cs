@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using BlazorBattles.Client.Services;
+using Microsoft.AspNetCore.Components.Authorization;
 using Blazored.Toast;
 
 namespace BlazorBattles.Client
@@ -23,6 +24,7 @@ namespace BlazorBattles.Client
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddScoped<IBananaService, BananaService>();
             builder.Services.AddScoped<IUnitService, UnitService>();
+            builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
             await builder.Build().RunAsync();
         }
