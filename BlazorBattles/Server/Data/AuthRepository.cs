@@ -20,7 +20,7 @@ namespace BlazorBattles.Server.Data
 
         public Task<bool> UserExists(string email)
         {
-            throw new NotImplementedException();
+             throw new NotImplementedException();
         }
     }
 }
